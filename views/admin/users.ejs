@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry | Home Services</title>
+    <!-- tialwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    
+    <div class="allUser flex flex-wrap p-5">
+    <% allusers.forEach(function(user){ %>
+       <div class="user w-[32%] h-1/4 rounded-md px-2 py-1 border-solid border-black border-[1px] m-2  ">
+       
+        <div class="penal w-full h-1/4 ">
+            <p class="text-center text-black font-bold"><%= user.fullname %></p>
+            <p class="text-center text-black font-bold"><%= user.email %></p>
+            <form action="/owners/delete/<%= user._id %>" method="post">
+                <input type="submit" value="Delete" class="w-fit px-3 pt-1 pb-2">
+            </form>
+           <!-- <a class="w-full text-right" href="/delete/<%= user._id %>"> <div class="btn mr-3 text-black text-sm font-bold">Delete</div> </a> -->
+        </div>
+       </div>
+    <% }) %>
+</div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry | Home Services</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <!-- locomotive css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <!-- shery css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.css" />
+    <!-- remixicon cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/contact.css">
+    <link rel="stylesheet" href="/stylesheets/about.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <div class="menu-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+            <div class="logo">
+                <a href="/">Laundry <span>Portal</span></a>
+            </div>
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <!-- <li><a href="./order.html">Order</a></li> -->
+                <!-- <li><a href="./team.html">Team</a></li> -->
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/products">Products</a></li>
+            </ul>
+            <div class="nav-btn menus" style="display: flex;">
+                <% if (isLoggedIn) { %>
+                    <a href="/order"><button type="submit">Order Now</button></a>
+                    <a href="/profile"> <div class="pmenu relative"><img class="w-10 h-10 bg-[#f8b500] rounded-full ml-3" src="../images/user.png" alt="profile"></a>
+                <div class="profile"><div class="pro-left"></div></div>
+                    <% } else { %>
+                        <a href="/login"><button type="button">Login</button></a>
+                        <a href="/signup"><button type="button">SignUp</button></a>
+                        <% } %>
+            </div>
+        </nav>
+        
+        <div class="contact-page">
+            <div class="contact-info">
+                <div class="phone">
+                    <img src="./images/phone-call.png" alt="">
+                    <div class="phone-num">
+                        <h4>Phone</h4>
+                        <p>+923319790890</p>
+                    </div>
+                </div>
+                <div class="email">
+                    <i class="ri-mail-line"></i>
+                    <div class="phone-num">
+                        <h4>Email</h4>
+                        <p><%= User.email %></p>
+                    </div>      
+                </div>
+                <div class="address">
+                    <i class="ri-map-pin-line"></i>
+                    <div class="phone-num">
+                        <h4>Address</h4>
+                        <p>streat 2, line 5, xyz</p>
+                </div>
+                </div>
+             </div>
+             <div class="message-info">
+                <div class="message-overlay">
+                    <h2>Get in Touch</h2>
+                    <div class="over1">
+                        <div class="phone">
+                            <p><%= User.fullname %></p>
+                        </div>
+                        <div class="phone">
+                            <p><%= User.email %></p>
+                        </div>
+                        <div class="phone">
+                            <p></p>
+                        </div>
+                    </div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                    <div class="send-mess-btn">
+                        <button>Send Message</button>
+                     </div>
+                </div>
+             </div>
+
+             
+        </div>
+
+        <div class="footer" data-scroll>
+            <div class="left">
+                <div class="line1">
+                    <a href="">LAUNDRY</a>
+                    <a href=""> About</a>
+                    <a href=""> Help Center</a>
+                    <a href=""> Cancellation option</a>
+                </div>
+                <div class="line2">
+                    <a href="">CONNECT WITH US</a>
+                    <a href="">Facebook</a>
+                    <a href="">Whatsapp</a>
+                    <a href="">Instagram</a>
+                    <a href="">Twitter</a>
+                </div>
+            </div>
+            <div class="right">
+                <h2>2024 Laundry</h2>
+                <a href="">Terms of Service </a>-<a href=""> Privacy Policy</a>
+            </div>
+       </div>
+
+    </div>
+
+    <!-- locomotive js  -->
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+<!-- gsap cdn  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+<!-- scrolltrigger cdn  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Three JS cdn  -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script> -->
+
+<!-- controlKit for debunging -->
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+
+<!-- Shery JS cdn  -->
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.js"></script>
+
+<!-- JavaScript file  -->
+<script src="script.js"></script>
+</body>
+</html>

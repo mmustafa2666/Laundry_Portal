@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry | Home Services</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <!-- locomotive css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <!-- shery css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.css" />
+    <!-- remixicon cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- css file  -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/order.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/> -->
+
+</head>
+
+<body>
+    <div class="main min-h-screen">
+        <nav class="navbar">
+            <div class="menu-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+            <div class="logo">
+                <a href="/">Laundry <span>Portal</span></a>
+            </div>
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/products">Products</a></li>
+            </ul>
+            <div class="nav-btn menus" style="display: flex;">
+                <% if (isLoggedIn) { %>
+                    <a href="/showallorders"><button type="submit">Show Orders</button></a>
+                    <a href="/profile"> <div class="pmenu relative"><img class="w-10 h-10 bg-[#f8b500] rounded-full ml-3" src="../images/user.png" alt="profile"></a>
+                    
+                    <% } else { %>
+                        <a href="/login"><button type="button">Login</button></a>
+                        <a href="/signup"><button type="button">SignUp</button></a>
+                        <% } %>
+            </div>
+        </nav>
+        <div class="order">
+            <h2>Order Now</h2>
+            <form action="/order" method="post">
+
+                <div class="form-optionfl">
+                    <div class="form-option">
+                        <input type="text" name="fullname" placeholder="Name" required></div>
+                        <input class="form-option" type="number" name="contact" placeholder="Contact" required>
+                    </div>
+                    <div class="form-option">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-option ">
+                        <div id="items-container">
+                            <label>Choose Item</label>
+                            <div class="item-quantity-pair">
+                    
+                        </div>
+                    </div>
+                    <br>    
+                    <div id="grand-total">Grand Total: $0</div>
+                        <input type="hidden" name="grandTotal" id="grandtotal" value="0"> <!-- Hidden input for grandTotal -->
+                    <br>
+                    <button class="addbtn" type="button" onclick="addItem()">Add Item</button>
+
+                </div>
+
+                <div class="form-option">
+
+                    <input type="text" name="address" placeholder="Address" required>
+                </div>
+
+                <div class="submet">
+                    <button type="submit">
+                        <% if (isLoggedIn) { %>
+                            <a href="/" style="text-decoration: none; color: black;">Order Now</a>
+                        <% } else { %>
+                            <a href="/login" style="text-decoration: none; color: black;">Order Now</a>
+                        <% } %>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+        <div class="footer" data-scroll>
+            <div class="left">
+                <div class="line1">
+                    <a href="">LAUNDRY</a>
+                    <a href=""> About</a>
+                    <a href=""> Help Center</a>
+                    <a href=""> Cancellation option</a>
+                </div>
+                <div class="line2">
+                    <a href="">CONNECT WITH US</a>
+                    <a href="">Facebook</a>
+                    <a href="">Whatsapp</a>
+                    <a href="">Instagram</a>
+                    <a href="">Twitter</a>
+                </div>
+            </div>
+            <div class="right">
+                <h2>2024 Laundry</h2>
+                <a href="">Terms of Service </a>-<a href=""> Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+    <!-- locomotive js  -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+    <!-- gsap cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- scrolltrigger cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Three JS cdn  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script> -->
+
+    <!-- controlKit for debunging -->
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+
+    <!-- Shery JS cdn  -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.js"></script>
+
+    <!-- JavaScript file  -->
+
+
+
+    <script src="script.js">  </script>
+    <script>
+        var maxItems = 6; // Set your limit here
+        var itemCount = 0;
+    
+        // Define the prices for each item
+        const itemPrices = {
+            "shalwar": 2,
+            "kameez": 2,
+            "tshirt": 3,
+            "jeans": 3,
+            "2-piece": 5,
+            "3-piece": 6,
+            "hand towel": 7
+        };
+    
+        function updateQuantityOptions(selectElement) {
+            var itemSelect = selectElement;
+            var selectedItem = itemSelect.options[itemSelect.selectedIndex].value;
+            var quantitySelect = itemSelect.parentElement.querySelector('select[name="quantity"]');
+            var totalPriceInput = itemSelect.parentElement.querySelector('input[name="totalprice"]');
+            var priceInput = itemSelect.parentElement.querySelector('input[name="price"]');
+    
+            quantitySelect.disabled = false;
+            quantitySelect.innerHTML = "";
+    
+            var defaultOption = document.createElement("option");
+            defaultOption.value = "";
+            defaultOption.textContent = "--Select Quantity--";
+            quantitySelect.appendChild(defaultOption);
+    
+            var maxQuantity = selectedItem === "hand towel" ? 0 : 5;
+    
+            for (var i = 1; i <= maxQuantity; i++) {
+                var option = document.createElement("option");
+                option.value = i;
+                option.text = i;
+                quantitySelect.appendChild(option);
+            }
+    
+            if (selectedItem) {
+                var price = itemPrices[selectedItem];
+                priceInput.value = price;
+            } else {
+                priceInput.value = "0";
+            }
+    
+            totalPriceInput.value = "0";
+            updateGrandTotal();
+        }
+    
+        function calculateTotalPrice(quantitySelect) {
+            var quantity = parseInt(quantitySelect.value);
+            var itemSelect = quantitySelect.parentElement.querySelector('select[name="item"]');
+            var selectedItem = itemSelect.options[itemSelect.selectedIndex].value;
+            var totalPriceInput = quantitySelect.parentElement.querySelector('input[name="totalprice"]');
+            var price = itemPrices[selectedItem];
+    
+            var totalPrice = price * quantity;
+            totalPriceInput.value = totalPrice;
+    
+            updateGrandTotal();
+        }
+    
+        function updateGrandTotal() {
+            var total = 0;
+            var totalPriceInputs = document.querySelectorAll('input[name="totalprice"]');
+            totalPriceInputs.forEach(function (input) {
+                total += parseFloat(input.value);
+            });
+    
+            document.getElementById('grand-total').textContent = "Grand Total: $" + total;
+            document.getElementById('grandtotal').value = total;
+        }
+    
+        function addItem() {
+            if (itemCount >= maxItems) {
+                alert("You have reached the maximum number of items.");
+                return;
+            }
+    
+            var container = document.getElementById("items-container");
+    
+            var div = document.createElement("div");
+            div.className = "item-quantity-pair";
+    
+            var itemLabel = document.createElement("label");
+            itemLabel.textContent = "Select Item: ";
+            div.appendChild(itemLabel);
+    
+            var itemSelect = document.createElement("select");
+            itemSelect.name = "item";
+            itemSelect.onchange = function () {
+                updateQuantityOptions(this);
+            };
+    
+            var defaultOption = document.createElement("option");
+            defaultOption.value = "";
+            defaultOption.textContent = "--Select an Item--";
+            itemSelect.appendChild(defaultOption);
+    
+            var options = [
+                { value: "shalwar", text: "Shalwar" },
+                { value: "kameez", text: "Kameez" },
+                { value: "tshirt", text: "T Shirt" },
+                { value: "jeans", text: "Jeans" },
+                { value: "2-piece", text: "2-Piece" },
+                { value: "3-piece", text: "3-Piece" },
+                { value: "hand towel", text: "Hand Towel" }
+            ];
+    
+            options.forEach(function (optionData) {
+                var option = document.createElement("option");
+                option.value = optionData.value;
+                option.textContent = optionData.text;
+                itemSelect.appendChild(option);
+            });
+    
+            div.appendChild(itemSelect);
+    
+            var quantityLabel = document.createElement("label");
+            quantityLabel.textContent = " Select Quantity: ";
+            div.appendChild(quantityLabel);
+    
+            var quantitySelect = document.createElement("select");
+            quantitySelect.name = "quantity";
+            quantitySelect.disabled = true;
+            quantitySelect.onchange = function () {
+                calculateTotalPrice(this);
+            };
+    
+            var defaultQuantityOption = document.createElement("option");
+            defaultQuantityOption.value = "";
+            defaultQuantityOption.textContent = "--Select Quantity--";
+            quantitySelect.appendChild(defaultQuantityOption);
+    
+            div.appendChild(quantitySelect);
+    
+            var priceInput = document.createElement("input");
+            priceInput.type = "text";
+            priceInput.name = "price";
+            priceInput.value = "0";
+            priceInput.readOnly = true;
+            div.appendChild(priceInput);
+    
+            var totalPriceInput = document.createElement("input");
+            totalPriceInput.type = "text";
+            totalPriceInput.name = "totalprice";
+            totalPriceInput.value = "0";
+            totalPriceInput.readOnly = true;
+            div.appendChild(totalPriceInput);
+    
+            container.appendChild(div);
+    
+            itemCount++;
+        }
+    </script>
+    
+
+</body>
+
+</html>

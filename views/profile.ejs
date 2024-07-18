@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry | Home Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="profile w-full h-screen flex flex-col items-center mt-5 xl:mt-1 ">
+        <div class="pimage w-[45%] h-[20%] rounded-full object-cover bg-red-500 mt-6 xl:mt-4 xl:bg-transparent xl:w-[30%] xl:h-[57%]">
+            <img class="w-[100%] h-[100%] " src="" alt="" >
+        </div>
+        <div class="pdetail flex flex-col items-center  justify-center">
+            <h1 class="text-2xl mt-4 font-bold xl:text-red-500"><%= User.fullname%></h1>
+            <h3 class="text-xl mt-1 font-semibold"><%= User.email%></h3>
+        </div>
+        <div class="line border-solid border-black border-top border-[1px] w-[85%] my-2"></div>
+        <div class="btns mt-3">
+            <a class="edit text-2xl font-semibold border-solid bg-[#f8b500] px-6 pt-1 pb-2 rounded-full border-[1px]" href="/profileedit/<%= User._id %>">Edit</a>
+            <a class="edit text-2xl font-semibold border-solid bg-[#f8b500] px-6 pt-1 pb-2 rounded-full border-[1px]" href="/logout">logout</a>
+        </div>
+    </div>
+    
+</body>
+</html>

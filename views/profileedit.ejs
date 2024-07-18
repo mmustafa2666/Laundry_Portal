@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry | Home Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="profile w-full h-screen flex flex-col items-center mt-5 xl:mt-1 px-5 py-3">
+        <h1>UpDate Profile</h1>
+        
+        <form autocomplete="off" action="/updateprofile/<%= User._id %>" method="post" enctype="multipart/form-data">
+            <input type="email" name="" id="" value="<%= User.email %>" class="disable w-full h-[10] mb- px-2"/>
+            <label for="profileimage">Image</label>
+            <input type="file" name="image" id="" class=" w-full h-[10] mb-2 px-2 rounded-md border-2"/>
+            <label for="name">Name</label>
+            <input type="text" name="fullname" id="fulname" class="border-2 w-full h-[10] mb-2 px-2 rounded-md"/>
+            <label for="number">phone</label>
+            <input type="text" name="number" id="name" class="border-2 w-full h-[10] mb-2 px-2 rounded-md"/>
+            <input type="submit" value="Update" class=" bg-red-500 rounded-full w-full h-1/6">
+        </form>
+    </div>
+    
+</body>
+</html>

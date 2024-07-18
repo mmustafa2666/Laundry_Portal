@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body, html{
+    width: 100%;
+    height: 100%;
+}
+
+.order{
+    width: 80%;
+    margin: 10vw;
+    margin-bottom: 3vw;
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd768;
+    border-radius: 20px;
+    padding-top: 10px;
+}
+
+.order form{
+    width: 70%;
+    margin-top: 10px;
+    
+}
+.form-optionfl{
+    display: flex;
+
+}
+
+.form-option{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px ;
+    margin-right: 3px;
+} 
+
+.form-option #items-container{
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: -25px ;
+    margin-right: 3px;
+} 
+
+.form-option input{
+    background-color: transparent;
+	border: none;
+	padding: 1px 15px;
+	margin: 8px 0;
+	width: 95%;
+    outline: none;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+}
+form .submet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.addbtn {
+    border: 1px solid #000000;
+    border-radius: 50px;
+	padding: 8px 15px;
+	margin: 3px 0;
+	width: 30%;
+    outline: none;
+    padding-left: 5px;
+    border-bottom-width: 2px;
+}
+
+.submet button{
+    border: 1px solid #000000;
+    border-radius: 50px;
+    
+	padding: 10px 15px;
+	margin: 8px 0;
+
+	width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* show orders */
+
+.showallorders{
+    width: 80%;
+    margin: 10vw;
+    margin-bottom: 3vw;
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd768;
+    border-radius: 20px;
+    padding-top: 10px;
+}

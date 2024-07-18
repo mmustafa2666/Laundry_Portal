@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+
+    <div class="w-full h-screen flex items-start px-10 py-10 ">
+        <div class="w-[25%] flex h-screen flex-col items-start">
+            <div class="flex flex-col">
+                <a class="block w-fit mb-2" href="/owners/admin">All Products</a>
+                <a class="block w-fit mb-2" href="/owners/createproduct">Create new product</a>
+                <a class="block w-fit mb-2" href="/owners/users">All Users</a>
+                <a class="block w-fit mb-2" href="/owners/orders">All Order</a>
+            </div>
+        </div>
+        <div class="w-[75%] flex flex-col gap-5 h-screen">
+            <a class="text-red-500" href="">Delete all</a>
+            <div class="flex flex-wrap items-start gap-5">
+                <% products.forEach(function(product){ %>
+                    <div class="relative w-60">
+                        <div class="discount absolute top-2 right-2  rounded-full py-2 px-2 flex items-center justify-center">
+                            <% let productDiscount = product.discount; %>
+                            <% if (productDiscount > 0){%>
+                                <h1 class="a font-bold bg-[#f8b500] opacity-70 rounded-full px-2 py-1 pb-2 pt-2"><%= product.discount %>%</h1>
+                            <%}else {%>
+                                <h1 class="a font-bold opacity-100"></h1>
+                            <%}%>
+                        </div>
+                        <div class="w-full h-52 flex flex-wrap items-center justify-center bg-[<%= product.bgcolor %>]">
+                            <img class="h-[12rem]" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+                                alt="">
+                        </div>
+                        <div
+                            class="flex justify-between bg-[<%= product.panelcolor %>] items-center rounded-md px-4 py-4 text-[<%= product.textcolor %>]">
+                            <div>
+                                <h3>
+                                    <%= product.name %>
+                                </h3>
+                                <h4>Rs. <%= product.price %>
+                                </h4>
+                            </div>
+                            <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white" href="">
+                                <i class="ri-add-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <% }) %>
+                
+            </div>
+        </div>
+
+    </div>
+
+    </div>

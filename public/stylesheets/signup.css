@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    position: relative;
+}
+
+.main .register-form{
+    position: relative;
+    background-color: #20202020;
+    padding: 10vh 15vw;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.reg-right .ghost:hover{
+    color: #ffcd42;
+    border-color: #ffcd42;
+}
+
+.register-form .reg-left {
+    width: 50%;
+    /* height: ; */
+    background-color: #fff;
+    border-radius: 20px 0  0 20px ;
+    padding: 4vh 4vw;
+}
+
+
+.reg-left h2 {
+    text-align: center;
+    font-size: 2vw;
+    letter-spacing: -1px;
+    font-weight: 900;
+}
+
+.form-option {
+    display: flex;
+    /* width: 100%; */
+    margin-top: 1vw;
+    padding: 0 25px;
+    height: 50px;
+    align-items: center ;
+    justify-content: center;
+    border-bottom: 1px solid #eee ;
+    border-radius: 50px;
+    background-color: rgb(241, 241, 241);
+}
+
+.form-option>label> i {
+    font-size: 1.3vw;
+    color: #000;
+}
+.form-option> input {
+    /* background-color: #eee; */
+	border: none;
+    background-color: transparent;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 95%;
+    outline: none;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+}
+
+.sign-btn{
+    background-color: #fcca3ed6;
+    outline: none;border: none;
+    width: 100%;
+    height: 3vw;
+    border-radius: 50px;
+    color: #000;
+    margin-top: 20px;
+}
+.sign-btn:hover{
+    background-color: #f8b500;
+} 
+
+/* numbers increment disable */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.reg-left .forg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3px;
+    display: none;
+    
+}
+
+.forg a {
+text-decoration: none;
+color: #000;
+opacity: 0.7;
+}
+
+.register-form .reg-right {
+    width: 50%;
+    /* height: 100%; */
+    background-color: #000;
+    border-radius: 0px 20px  20px 0px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0 3vw;
+}
+
+.reg-right p{
+    font-size: 1.2vw;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+    text-align: center;
+    margin: 5vh 0;
+}
+
+.reg-right button{
+    background-color: transparent;
+    padding: 1.5vh 2.5vw;
+    font-size: 1.3vw;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px ;
+    text-transform: uppercase;
+}
+
+

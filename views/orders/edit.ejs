@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <% let orderId = order._id %> <% let userId = order.user._id %>
+
+    <form action="/users/<%= userId %>/orders/<%= orderId %>?_method=PUT" method="post">
+        <div class="inpfild">
+            <label for="">First Name</label>
+        <input type="text" name="orderData[firstname]" value="<%= order.firstname %>">
+        </div>
+        <div class="inpfild">
+            <label for="">Last Name</label>
+        <input type="text" name="orderData[lastname]" value="<%= order.lastname %>">
+        </div>
+        <div class="inpfild">
+            <label for="">Email</label>
+        <input type="text" name="orderData[email]" value="<%= order.email %>">
+        </div>
+        <div class="inpfild">
+            <label for="">Contact</label>
+        <input type="text" name="orderData[contact]" value="<%= order.contact %>">
+        </div>
+        <div class="inpfild">
+            <label for="">Address</label>
+        <input type="text" name="orderData[address]" value="<%= order.address %>">
+        </div>
+        <input type="submit" value="Upadate">
+    </form>
+
+
+</body>
+</html>

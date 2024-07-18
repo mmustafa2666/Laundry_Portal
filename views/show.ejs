@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry | Home Services</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="main">
+    <nav class="navbar">
+      <div class="menu-toggle">
+        <i class="ri-menu-2-line"></i>
+      </div>
+      <div class="logo">
+        <a href="/">Laundry <span>Portal</span></a>
+      </div>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <!-- <li><a href="./order.html">Order</a></li> -->
+        <!-- <li><a href="./team.html">Team</a></li> -->
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <div class="nav-btn menus" style="display: flex;">
+        <% if (isLoggedIn) { %>
+          <a href="/showallorders"><button type="submit">Show Orders</button></a>
+          <div class="profile">
+            <div class="pro-left"></div>
+          </div>
+          <% } else { %>
+            <a href="/login"><button type="button">Login</button></a>
+            <a href="/signup"><button type="button">SignUp</button></a>
+            <% } %>
+      </div>
+    </nav>
+    
+    <%= order.email %>
+    
+      
+
+
+
+
+    <div class="footer" data-scroll>
+      <div class="left">
+        <div class="line1">
+          <a href="">LAUNDRY</a>
+          <a href=""> About</a>
+          <a href=""> Help Center</a>
+          <a href=""> Cancellation option</a>
+        </div>
+        <div class="line2">
+          <a href="">CONNECT WITH US</a>
+          <a href="">Facebook</a>
+          <a href="">Whatsapp</a>
+          <a href="">Instagram</a>
+          <a href="">Twitter</a>
+        </div>
+      </div>
+      <div class="right">
+        <h2>2024 Laundry</h2>
+        <h4>Demo or it didn't happen.</h4>
+        <a href="">Terms of Service </a>-<a href=""> Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

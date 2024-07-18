@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    position: relative;
+}
+
+.contact-page {
+    width: 100%;
+    height: 100vh;
+    padding: 11vh 5vw;
+    background-color: #20202020;
+}
+
+.contact-info {
+    display: flex;
+    width: 100%;
+    padding: 2vh 5vw;
+    justify-content: space-between;
+}
+
+.contact-info> .phone {
+    width: 29%;
+    height: 5vw;
+    border: 1px solid #20202020;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vw;
+    padding: 2vh 2vw;
+}
+
+.phone i{
+    font-size: 1.8vw;
+}
+.phone p{
+    opacity: 0.8;
+}
+
+.contact-info> .email {
+    width: 29%;
+    height: 5vw;
+    border: 1px solid #20202020;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vw;
+    padding: 2vh 2vw;
+}
+
+.email i{
+    font-size: 1.8vw;
+}
+
+.email p {
+    opacity: 0.8;
+}
+.contact-info> .address {
+    width: 29%;
+    height: 5vw;
+    border: 1px solid #20202020;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vw;
+    padding: 2vh 2vw;
+    overflow: hidden;
+}
+
+.address i{
+    font-size: 1.8vw;
+}
+.address p {
+    opacity: 0.8;
+}
+
+.message-info {
+    padding: 8vh 15vw;
+}
+
+.message-overlay {
+    width: 100%;
+    /* height: 10vh ; */
+    border: 1px solid #20202020;
+    padding: 4vh 6vw;
+    background-color: #22222020;
+}
+
+.message-overlay .over1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2vw 0;
+
+}
+
+.message-overlay .over1 .phone {
+    border: 1px solid #20202020;
+    width: 30%;
+    padding: 1vh 2vh;
+    border-radius: 10px;
+}
+
+.message-overlay textarea {
+    width: 100%;
+    height: 20vh;
+    background-color: #22222020;
+    color: #000;
+    border: none;
+    padding: 1vw;
+    outline: none;
+    font-size: 1.3vw;
+}
+
+.message-overlay .send-mess-btn {
+    padding-top: 2vw;
+}
+
+.send-mess-btn button {
+    border: none;
+    padding: 2vh 3vw;
+    background-color: #62c1e1;
+    font-weight: 700;
+    border-radius: 5px;
+}

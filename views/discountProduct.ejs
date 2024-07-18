@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <div class="menu-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+            <div class="logo">
+                <a href="/">Laundry <span>Portal</span></a>
+            </div>
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <!-- <li><a href="./order.html">Order</a></li> -->
+                <!-- <li><a href="./team.html">Team</a></li> -->
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <div class="nav-btn menus" style="display: flex;">
+                <% if (isLoggedIn) { %>
+                    <a href="/order"><button type="submit">Order Now</button></a>
+                <div class="profile"><div class="pro-left"></div></div>
+                <% } else { %>
+                        <a href="/login"><button type="button">Login</button></a>
+                        <a href="/signup"><button type="button">SignUp</button></a>
+                <% } %>
+            </div>
+        </nav>
+        <div class="w-full h-screen flex items-start px-20 py-20">
+            <div class="w-[25%] flex h-screen flex-col items-start">
+                <div class="flex items-center gap-2">
+                    <h3>sort by</h3>
+                    <form action="/shop">
+                        <select class="border-[1px] px-2 py-1" name="sortby" id="">
+                            <option value="popular">Popular</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="flex flex-col mt-20">
+    
+                    <a class="block w-fit mb-2" href="/products">All Products</a>
+                    <a class="block w-fit mb-2" href="/discountproducts">Discounted Products</a>
+                </div>
+                <!-- <div class="mt-32">
+                    <a class="block w-fit mb-2" href="">Filter by :</a>
+                    <a class="block w-fit mb-2" href="">Availability</a>
+                    <a class="block w-fit mb-2" href="">Discount</a>
+                </div> -->
+            </div>
+            <div class="w-[75%] flex flex-col gap-5 h-screen">
+                <div class="flex flex-wrap items-start gap-5">
+                    <% let hasDiscount=products.some(product=> product.discount > 0); %>
+                    <% if (hasDiscount) { %>
+                            <% products.forEach(function(product) { %>
+                                <% if (product.discount> 0) { %>
+                                    <div class="relative w-60">
+                                        <div
+                                            class="discount absolute top-2 right-2  rounded-full py-2 px-2 flex items-center justify-center">
+                                            <% let productDiscount=product.discount; %>
+                                                <% if (productDiscount> 0){%>
+                                                    <h1
+                                                        class="a font-bold bg-[#f8b500] opacity-70 rounded-full px-2 py-1 pb-2 pt-2">
+                                                        <%= product.discount %>%
+                                                    </h1>
+                                                    <%}else {%>
+                                                        <h1 class="a font-bold opacity-100"></h1>
+                                                    <%}%>
+                                        </div>
+                                        <div
+                                            class="w-full h-52 flex flex-wrap items-center justify-center bg-[<%= product.bgcolor %>]">
+                                            <img class="h-[12rem]"
+                                                src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+                                        </div>
+                                        <div
+                                            class="flex justify-between bg-[<%= product.panelcolor %>] items-center rounded-md px-4 py-4 text-[<%= product.textcolor %>]">
+                                            <div>
+                                                <h3>
+                                                    <%= product.name %>
+                                                </h3>
+                                                <h4>Rs. <%= product.price %>
+                                                </h4>
+                                            </div>
+                                            <a class="w-7 h-7 flex items-center justify-center rounded-full bg-white"
+                                                href="">
+                                                <i class="ri-add-line"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                    <% }) %>
+                                    <% } else { %>
+                                        <h1>Sorry! There are no available discounts.</h1>
+                                    <% } %>
+    
+    
+    
+                </div>
+            </div>
+        </div>
+        <div class="footer relative " data-scroll>
+            <div class="left">
+                <div class="line1">
+                    <a href="">LAUNDRY</a>
+                    <a href=""> About</a>
+                    <a href=""> Help Center</a>
+                    <a href=""> Cancellation option</a>
+                </div>
+                <div class="line2">
+                    <a href="">CONNECT WITH US</a>
+                    <a href="">Facebook</a>
+                    <a href="">Whatsapp</a>
+                    <a href="">Instagram</a>
+                    <a href="">Twitter</a>
+                </div>
+            </div>
+            <div class="right">
+                <h2>2024 Laundry</h2>
+                <!-- h4>Demo or it didn't happen.</h4> -->
+                <a href="">Terms of Service </a>-<a href=""> Privacy Policy</a>
+            </div>
+       </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .services {
+    width: 100%;
+    margin: 3vh auto;
+    padding: 6vh 6vw 0 6vw;
+  }
+  
+  .services h2{
+    margin-bottom: 1vw;
+  }
+  
+  .cards {
+    display: flex;
+    /* flex-wrap: wrap; Allow cards to wrap to the next line */
+    justify-content: space-between;
+    gap: 5vw;
+  }
+  
+  .card {
+    width: calc(29% - 10px); /* Adjust the width of cards for small screens */
+    max-width: 100%; /* Ensure cards don't exceed 100% width */
+    height: auto; /* Allow cards to adjust height based on content */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* .aboutCards{
+    margin-bottom: 3px;
+  } */
+  .card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 10px); /* Adjust the width of cards for medium screens */
+    }
+  }
+  
+  /* Media query for even smaller screens */
+  @media screen and (max-width: 480px) {
+    .card {
+        width: 100% !important; /* Adjust the width of cards for small screens */
+    }
+  }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry | Home Services</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <!-- locomotive css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <!-- shery css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.css" />
+    <!-- remixicon cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/signup.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <div class="menu-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+            <div class="logo">
+                <a href="/">Laundry <span>Portal</span></a>
+            </div>
+            <!-- <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="./order.html">Order</a></li>
+                <li><a href="./team.html">Team</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul> -->
+            <div class="nav-btn menus" style="display: flex;">
+                <a href="/order"><button type="submit">Order Now</button></a>
+                <div class="profile"><div class="pro-left"></div></div>
+                <a href="/login"><button type="button">Login</button></a>
+                <a href="/signup"><button type="button">SignUp</button></a>
+                <!-- <div class="pro-user"><i class="ri-user-line"></i></div> -->
+            </div>
+            
+    
+    
+        </nav>
+        <div class="register-form">
+            <div class="reg-left">
+                    <h2>Sign up</h2>
+                    <form action="<%= message === 'User register' ? '/auth/register/user' : '/auth/register/admin' %>" method="POST">
+                        <div class="form-option">
+                            <label for=""><i class="ri-shield-user-fill"></i></label>
+                        <input type="text"placeholder="Full Name" name="fullname">
+                        </div>
+                        <div class="form-option">
+                            <label for=""><i class="ri-mail-line"></i></label>
+                        <input type="email" id="otpField" placeholder="Email" name="email">
+                        </div>
+                        <div class="form-option">
+                            <label for=""><i class="ri-phone-fill"></i></label>
+                        <input type="number" placeholder="Number" name="number">
+                        </div>
+                        <div class="form-option">
+                            <label for=""><i class="ri-lock-fill"></i></label>
+                        <input type="password" placeholder="Password" name="password">
+                        </div>
+                        <a href="./"><input class="sign-btn" type="submit" value="SIGN UP"></a>
+                    </form>
+                    <!-- <div class="log-goo">
+                        <label for="">
+
+                        </label>
+                        <p></p>
+                    </div> -->
+                   <div class="forg">
+                    <a href="#">already have Account</a>
+                   </div>
+            </div>
+
+            <div class="reg-right">
+                    <H2>Welcome Back!</H2>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <a href="/auth/login"> <button class="ghost" id="signIn">Login</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascripts/email.js"> </script>
+
+</body>
+</html>

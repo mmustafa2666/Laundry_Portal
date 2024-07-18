@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry | Home Services</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <!-- locomotive css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <!-- shery css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.css" />
+    <!-- remixicon cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <div class="menu-toggle">
+                <i class="ri-menu-2-line"></i>
+            </div>
+            <div class="logo">
+                <a href="/">Laundry <span>Portal</span></a>
+            </div>
+            <div class="nav-btn menus" style="display: flex;">
+                <a href="/auth/register/user"><button type="button">SignUp</button></a>
+            </div>
+        </nav>
+        <div class="register-form">         
+            <div class="reg-right">
+                    <H2>Hello, Friend!</H2>
+                    <p>Enter your personal details and start journey with us info</p>
+                    <a href="/signup"><button class="ghost" id="signIn">Sign Up</button> </a>
+            </div>
+            <div class="reg-left">
+                <h2>Login</h2>
+                <form action="/auth/login" method="post"> 
+                    <div class="form-option">
+                        <label for=""><i class="ri-mail-line"></i></label>
+                    <input type="email" name="email" placeholder="Email">
+                    </div> 
+                    <div class="form-option">
+                        <label for=""><i class="ri-lock-fill"></i></label>
+                    <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <input type="submit" value="LOGIN">
+                </form>
+               <hr>
+               <div class="auth-txt">
+                <p>Continue with</p>
+               </div>
+               <div class="auth">
+                <div class="log-goo">
+                   <a href="/auth/google"><i class="ri-google-fill mr-3"></i>Google</a>
+                </div>
+               </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

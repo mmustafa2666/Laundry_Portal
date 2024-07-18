@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry | Home Services</title>
+    <!-- tialwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="main flex w-full ">
+        <div class="w-[25%] flex h-screen flex-col items-start px-10 py-10 flex flex-grow ">
+            <div class="flex flex-col">
+                <a class="block w-fit mb-2" href="/owners/admin">All Products</a>
+                <a class="block w-fit mb-2" href="owners/createproduct">Create new product</a>
+                <a class="block w-fit mb-2" href="/owners/users">All Users</a>
+                <a class="block w-fit mb-2" href="/owners/orders">All Order</a>
+            </div>
+        </div>
+        <div class="allorders w-[74%] flex flex-wrap p-5">
+        <% allorders.forEach(function(order){ %>
+           <div class="user w-[32%] h-fit rounded-md px-2 py-1 border-solid border-black border-[1px] m-2 ">
+           
+            <div class="penal w-full h-1/4 ">
+                <p class="text-left text-black font-bold">Name : <%= order.fullname %></p>
+                <p class="text-left text-black font-bold">Email : <%= order.email %></p>
+                <p class="text-left text-black font-bold">Contact : +92 <%= order.contact %></p>
+                <p class="text-left text-black font-bold">Address : <%= order.address %></p>
+                <ul type="none" class="flex w-full justify-between font-bold">
+                    <h1>item</h1>
+                    <h1>quantity</h1>
+                    <h1>Total</h1>
+                </ul>
+                <% order.items.forEach(function(item){ %>
+                    <ul type="none" class="flex justify-between w-full ">
+                        <li><%= item.item %></li>
+                        <li class="mr-6"><%= item.quantity %></li>
+                        <li>$<%= item.totalprice %></li>
+                        
+                    </ul>
+                    <hr>
+                    <% }) %>
+                    <div class="gtotal w-full flex justify-between  font-bold">
+                        <h1>Total</h1>
+                        <h1 class="text-right ml-[17vw]"><%= order.grandTotal %></h1>
+                    </div>
+                    <hr>
+                <form action="/owners/order/delete/<%= order._id %>" method="post">
+                    <input  type="submit" value="Delete" class="w-fit px-3 pt-1 pb-2 font-semibold cursor-pointer">
+                </form>
+               
+            </div>
+           </div>
+        <% }) %>
+    </div>
+    </div>
+    
+</body>
+</html>
